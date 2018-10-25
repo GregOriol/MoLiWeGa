@@ -1,0 +1,21 @@
+# System, IDE, ...
+.DS_Store
+.idea
+.bundle
+
+# SASS
+.sass-cache
+
+# Node
+node_modules
+
+# Bower
+bower_components
+
+# Gulp generated
+resources/css/*
+resources/js/*
+
+# Git
+!.gitkeep
+.git
