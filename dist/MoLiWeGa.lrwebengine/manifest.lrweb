@@ -1,0 +1,42 @@
+--[[
+
+MoLiWeGa
+Copyright 2019 Greg Oriol - gregoriol.net
+
+]]
+
+importTags( "lr", "com.adobe.lightroom.default" )
+
+AddGridPages { 
+	template = "index.html",
+	rows=999, 
+	columns=999,
+}
+
+AddPhotoPages {
+	variant = '_large',
+}
+
+AddResources { 
+	source = "resources/js",
+	destination = "js", 
+}
+
+AddResources { 
+	source = "resources/css",
+	destination = "css", 
+}
+
+AddResources { 
+	source = "resources/img",
+	destination = "img", 
+}
+
+AddResources { 
+	source = "resources/fonts",
+	destination = "fonts", 
+}
+
+AddCustomCSS {
+	filename='css/custom.css',
+}

@@ -1,0 +1,113 @@
+body.fixed {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#vegas-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10000;
+  background-color: #000;
+  display: none;
+  
+  &.active {
+    display: block;
+  }
+}
+
+@font-face {
+  font-family: 'vegas-slideshow';
+  src: url('../fonts/vegas-slideshow.eot?99493751');
+  src: url('../fonts/vegas-slideshow.eot?99493751#iefix') format('embedded-opentype'),
+       url('../fonts/vegas-slideshow.woff?99493751') format('woff'),
+       url('../fonts/vegas-slideshow.ttf?99493751') format('truetype'),
+       url('../fonts/vegas-slideshow.svg?99493751#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?99493751#fontello') format('svg');
+  }
+}
+*/
+ 
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "vegas-slideshow";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.icon-resize-small:before { content: '\e800'; } /* '' */
+.icon-resize-full:before { content: '\e801'; } /* '' */
+.icon-play:before { content: '\e803'; } /* '' */
+.icon-pause:before { content: '\e804'; } /* '' */
+.icon-right-open-big:before { content: '\e805'; } /* '' */
+.icon-left-open-big:before { content: '\e806'; } /* '' */
+.icon-cancel:before { content: '\e807'; } /* '' */
+
+.vegas-control {
+  font-size: 24px;
+  text-decoration: none;
+  position: absolute;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  color: #fafafa;
+}
+#vegas-close {
+  top: 10px;
+  right: 10px;
+}
+#vegas-prev {
+  top: 50%;
+  left: 10px;
+}
+#vegas-next {
+  top: 50%;
+  right: 10px;
+}
+#vegas-playpause {
+  bottom: 10px;
+  left: 50%;
+}
+#vegas-fullscreen {
+  bottom: 10px;
+  right: 10px;
+}

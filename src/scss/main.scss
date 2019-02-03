@@ -1,0 +1,345 @@
+@import 'vendor/bourbon/bourbon';
+
+@import 'reset';
+
+html {
+  height: 100%;
+}
+
+body {
+//  color: $main-text-color;
+//  background-color: $main-background-color;
+  font-size: 16px;
+  font-family: 'Helvetica Light', 'Helvetica', Arial, sans-serif;
+  font-weight: 100;
+  text-align: left;
+  height: 100%; // ?
+}
+
+#container {
+  min-height: 100%;
+  padding-bottom: 80px; // height of the footer
+  position: relative;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+header {
+  text-align: center;
+  padding: 10px 0;
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .container {
+    width: 90%;
+    max-width: 1600px;
+    margin: 20px auto;
+
+    .copyright,
+    .contact {
+      font-size: 14px;
+      text-align: center;
+      margin: 10px 0;
+    }
+  }
+}
+
+h1 {
+  font-weight: 100;
+  margin: 16px 0;
+//  font-size: 38px;
+  font-size: 26px;
+}
+h2 {
+  font-weight: 100;
+  margin: 16px 0;
+//  font-size: 18px;
+  font-size: 14px;
+}
+//@media screen and (max-width: 750px) {
+//  h1 {
+//    margin: 16px 0;
+//    font-size: 24px;
+//  }
+//  h2 {
+//    margin: 16px 0;
+//    font-size: 14px;
+//  }
+//}
+
+#main-container {
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.button {
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid #cccccc;
+  white-space: nowrap;
+  padding: 4px 8px;
+  line-height: 1.4;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+
+  opacity: 0.9;
+  z-index: 100;
+
+  color: #333333;
+  background-color: #e7e7e7;
+  border-color: #cccccc;
+  font-size: 14px;
+
+  &.active {
+    display: block;
+  }
+  &:hover {
+    opacity: 1.0;
+  }
+}
+.slideshow {
+  color: #d7d7d7;
+  background-color: #111;
+  border-color: #d7d7d7;
+  font-size: 12px;
+}
+
+.menu {
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+///////////////////////////////
+
+@mixin columns($cols) {
+  .grid {
+    .item {
+      &:nth-child(#{$cols}n+1) {
+        clear: both;
+      }
+    }
+  }
+
+  &.gutter-small {
+    .grid {
+      .item {
+        $margin: 0.5%;
+        $size: floor((100% / $cols) - (2 * $margin));
+        width: $size;
+        padding-bottom: $size;
+        margin: $margin;
+      }
+    }
+  }
+  &.gutter-medium {
+    .grid {
+      .item {
+        $margin: 1%;
+        $size: floor((100% / $cols) - (2 * $margin));
+        width: $size;
+        padding-bottom: $size;
+        margin: $margin;
+      }
+    }
+  }
+  &.gutter-large {
+    .grid {
+      .item {
+        $margin: 2%;
+        $size: floor((100% / $cols) - (2 * $margin));
+        width: $size;
+        padding-bottom: $size;
+        margin: $margin;
+      }
+    }
+  }
+  &.gutter-xlarge {
+    .grid {
+      .item {
+        $margin: 3%;
+        $size: floor((100% / $cols) - (2 * $margin));
+        width: $size;
+        padding-bottom: $size;
+        margin: $margin;
+      }
+    }
+  }
+  &.gutter-xxlarge {
+    .grid {
+      .item {
+        $margin: 5%;
+        $size: floor((100% / $cols) - (2 * $margin));
+        width: $size;
+        padding-bottom: $size;
+        margin: $margin;
+      }
+    }
+  }
+  &.gutter-none {
+    .grid {
+      .item {
+        $margin: 0%;
+        $size: floor((100% / $cols) - (2 * $margin));
+        width: $size;
+        padding-bottom: $size;
+        margin: $margin;
+      }
+    }
+  }
+}
+
+
+body.table {
+  .grid {
+    @include clearfix;
+
+    .item {
+      float: left;
+
+      background-color: #333;
+      position: relative;
+
+      .content {
+        position: absolute;
+
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        a {
+          display: none;
+        }
+      }
+      .number {
+        position: absolute;
+        font-size: 46px;
+        opacity: 0.4;
+        color: #111;
+        font-weight: normal;
+        line-height: 1;
+        bottom: 0.5%;
+        left: 1.5%;
+        z-index: 10;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .number {
+          opacity: 0.66;
+          text-shadow: -1px 0 #aaa, 0 1px #aaa, 1px 0 #aaa, 0 -1px #aaa;
+        }
+      }
+    }
+  }
+
+  // Aspect
+  &.aspect-cover {
+    .grid {
+      .item {
+        .content {
+          background-size: cover;
+        }
+      }
+    }
+  }
+  &.aspect-contain {
+    .grid {
+      .item {
+        .content {
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  // Margin
+  &.margin-none {
+    $margin: 0;
+
+    .grid {
+      .item {
+        .content {
+          top: $margin; right: $margin; bottom: $margin; left: $margin;
+        }
+      }
+    }
+  }
+  &.margin-small {
+    $margin: 3%;
+
+    .grid {
+      .item {
+        .content {
+          top: $margin; right: $margin; bottom: $margin; left: $margin;
+        }
+      }
+    }
+  }
+  &.margin-medium {
+    $margin: 6%;
+
+    .grid {
+      .item {
+        .content {
+          top: $margin; right: $margin; bottom: $margin; left: $margin;
+        }
+      }
+    }
+  }
+  &.margin-large {
+    $margin: 12%;
+
+    .grid {
+      .item {
+        .content {
+          top: $margin; right: $margin; bottom: $margin; left: $margin;
+        }
+      }
+    }
+  }
+
+  // Columns
+  @media screen and (max-width: 750px) {
+    @include columns(1);
+  }
+  @media screen and (min-width: 750px) and (max-width: 999px) {
+    @include columns(2);
+  }
+  @media screen and (min-width: 1000px) and (max-width: 1279px) {
+    @include columns(3);
+  }
+  @media screen and (min-width: 1280px) and (max-width: 1439px) {
+    @include columns(4);
+  }
+  @media screen and (min-width: 1440px) {
+    @include columns(5);
+  }
+}
+
+@import 'vegas';

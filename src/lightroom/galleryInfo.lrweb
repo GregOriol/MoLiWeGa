@@ -1,0 +1,238 @@
+--[[
+
+MoLiWeGa
+Copyright 2019 Greg Oriol - gregoriol.net
+
+]]
+
+return {
+	LrSdkVersion = 2.0,
+	LrSdkMinimumVersion = 2.0,
+
+	version = 1.0,
+	title = "Modern Ligthroom Web Gallery",
+	id = "net.gregoriol.lightroom.moliwega",
+	galleryType = "lua",
+	aboutBoxFile = "about.html",
+	maximumGallerySize = 1000,
+
+	model = {
+		["metadata.siteTitle"] = "Gallery",
+		["metadata.siteDescription"] = "A gallery",
+
+		["metadata.name"] = "John Doe",
+		["metadata.link"] = "https://website.com",
+
+		["metadata.copyright"] = "2019 John Doe",
+
+		["addons.tracking"] = "",
+
+		["style.type"] = "table",
+		["style.gutter"] = "gutter-medium",
+		["style.images.aspect"] = "aspect-cover",
+		["style.images.margin"] = "margin-none",
+		["style.numbers"] = "numbers-with",
+
+		["appearance.body.background-color"] = "#111111",
+		["appearance.body.cssID"] = "body",
+		["appearance.text.color"] = "#f0f0f0",
+		["appearance.text.cssID"] = "body",
+		["appearance.title.color"] = "#ffffff",
+		["appearance.title.cssID"] = "#header-text",
+
+		["lightroomApplication.jpegQuality"] = 80,
+		["lightroomApplication.useWatermark"] = false,
+		["lightroomApplication.watermarkID"] = "",
+		["lightroomApplication.identityPlateExport"] = "(main)",
+
+		["photoSizes.thumb.height"] = 2100,
+		["photoSizes.thumb.width"] = 700,
+		["photoSizes.thumb.metadataExportMode"] = "copyright",
+		["photoSizes.thumb.useWatermark"] = false,
+
+		["photoSizes.large.width"] = 2000,
+		["photoSizes.large.height"] = function() return photoSizes.large.width end,
+
+		["perImageSetting.description"] = {
+			enabled = true,
+			value = "{{com.adobe.caption}}",
+			title = LOC "$$$/WPG/HTML/CSS/properties/ImageCaption=Caption",
+		},
+		["perImageSetting.title"] = {
+			enabled = true,
+			value = "{{com.adobe.title}}",
+			title = LOC "$$$/WPG/HTML/CSS/properties/ImageTitle=Title",
+		},
+		["perImageSetting.keywords"] = {
+			enabled = true,
+			value = "{{com.adobe.keywords}}",
+			title = LOC "$$$/WPG/HTML/CSS/properties/ImageTitle=Keywords",
+		},
+	},
+
+	iconicPreview = {
+		flashMovie = "iconicPreview.png",
+	},
+
+	views = function( controller, f )
+		local LrView = import "LrView"
+		local bind = LrView.bind
+		local multibind = f.multibind
+			return {
+				labels = f:panel_content {
+					bind_to_object = controller,
+					f:subdivided_sections {
+						f:header_section_label {
+							title = "Gallery",
+						},
+						f:labeled_text_input {
+							title = "Title",
+							value = bind "metadata.siteTitle",
+						},
+						f:labeled_text_input {
+							title = "Description",
+							value = bind "metadata.siteDescription",
+						},
+					},
+					f:subdivided_sections {
+						f:header_section_label {
+							title = "Footer",
+						},
+						f:labeled_text_input {
+							title = "Name",
+							value = bind "metadata.name",
+						},
+						f:labeled_text_input {
+							title = "Link",
+							value = bind "metadata.link",
+						},
+						f:labeled_text_input {
+							title = "Copyright:",
+							value = bind "metadata.copyright",
+						},
+					},
+					f:subdivided_sections {
+						f:header_section_label {
+							title = "Add-ons",
+						},
+						f:labeled_text_input {
+							title = "Tracking",
+							value = bind "addons.tracking",
+						}
+					}
+				},
+				colorPalette = f:panel_content {
+					bindToObject = controller,
+					f:subdivided_sections {
+						f:color_content_column {
+							f:label_and_color_row {
+								color = bind "appearance.body.background-color",
+								title = "Background color",
+							},
+							f:label_and_color_row {
+								color = bind "appearance.title.color",
+								title = "Title font color",
+							},
+							f:label_and_color_row {
+								color = bind "appearance.text.color",
+								title = "Text font color",
+							},
+						},
+					},
+				},
+				appearanceConfiguration = f:panel_content {
+					bindToObject = controller,
+					f:subdivided_sections {
+						f:header_section {
+							ui.popup_row {
+								title = "Style",
+								items = {
+									{ title = "Table", value = "table" },
+									{ title = "Columns", value = "columns" },
+									{ title = "Masonry", value = "masonry" }
+								},
+								bindingValue = "style.type",
+							},
+						},
+						f:content_column {
+							ui.popup_row {
+								title = "Gutter",
+								items = {
+									{ title = "None", value = "gutter-none" },
+									{ title = "Small", value = "gutter-small" },
+									{ title = "Medium", value = "gutter-medium" },
+									{ title = "Large", value = "gutter-large" },
+									{ title = "xLarge", value = "gutter-xlarge" },
+									{ title = "xxLarge", value = "gutter-xxlarge" },
+								},
+								bindingValue = "style.gutter",
+							},
+							ui.popup_row {
+								title = "Images",
+								items = {
+									{ title = "Fill", value = "aspect-cover" },
+									{ title = "Fit", value = "aspect-contain" },
+								},
+								bindingValue = "style.images.aspect",
+							},
+							ui.popup_row {
+								title = "Margin",
+								items = {
+									{ title = "None", value = "margin-none" },
+									{ title = "Small", value = "margin-small" },
+									{ title = "Medium", value = "margin-medium" },
+									{ title = "Large", value = "margin-large" },
+								},
+								bindingValue = "style.images.margin",
+							},
+							ui.popup_row {
+								title = "Numbers",
+								items = {
+									{ title = "With", value = "numbers-with" },
+									{ title = "Without", value = "numbers-without" },
+								},
+								bindingValue = "style.numbers",
+							},
+						}
+					},
+				},
+				outputSettings = f:panel_content {
+					bindToObject = controller,
+					f:subdivided_sections {
+
+						f:header_section_label {
+							title = "Large Images",
+						},
+
+						f:slider_content_column {
+							f:slider_row {
+								title = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/MaximumImageSizeLabel/LargePreview=Size",
+								value = bind "photoSizes.large.width",
+								unit = LOC "$$$/AgWPG/Templates/HTML/Panel/Labels/ImageSizeUnit=px",
+								min = 600,
+								max = 5120,
+								width_in_digits = 5,
+								precision = 0,
+							},
+						},
+
+						f:slider_content_column {
+							f:slider_row {
+								title = "Quality",
+								value = bind "lightroomApplication.jpegQuality",
+								tracking = bind "lightroomApplication.jpegQuality.tracking",
+								tracking_value = "qualityTracking",
+								unit = "",
+								max = 100,
+								min = 0,
+								width_in_digits = 4,
+								precision = 0,
+							},
+						},
+
+						f:watermark_section(controller),
+					},
+				},
+			}
+	end,
+}

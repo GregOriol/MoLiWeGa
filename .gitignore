@@ -13,8 +13,8 @@ node_modules
 bower_components
 
 # Gulp generated
-resources/css/*
-resources/js/*
+#resources/css/*
+#resources/js/*
 
 # Git
 !.gitkeep

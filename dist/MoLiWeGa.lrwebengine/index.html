@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>$model.metadata.siteTitle</title>
+
+    <meta name="description" content="$model.metadata.siteDescription">
+
+    <link rel="stylesheet" href="css/normalize.min.css" />
+    <!-- <link rel="stylesheet" href="styles/nprogress.min.css" /> -->
+    <link rel="stylesheet" href="css/vegas.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+</head>
+<body class="$model.style.type $model.style.gutter $model.style.images.margin $model.style.images.aspect">
+    <div id="container">
+        <header>
+            <div class="container">
+                <h1 id="header-text">$model.metadata.siteTitle</h1>
+                <h2 id="header-description">$model.metadata.siteDescription</h2>
+            </div>
+        </header>
+
+        <div id="main-container">
+            <div class="menu">
+                <button type="button" class="button slideshow">Slideshow &#x25B6;</button>
+            </div>
+
+            <div class="grid">
+                <lr:ThumbnailGrid>
+                    <lr:GridPhotoCell>
+                        <div class="item">
+                            <% if model.style.numbers == 'numbers-with' then %>
+                            <span class="number">$cellIndex</span>
+                            <% end %>
+                            <div class="content">
+                                <a class="" href="bin/images/large/<%= image.exportFilename %>.jpg" title="<%= image.metadata.title %>">
+                                    <img src="bin/images/thumb/<%= image.exportFilename %>.jpg" alt="<%= image.metadata.title %>" style="/*width: <%=image.renditions.thumb.width%>px; height: <%=image.renditions.thumb.height%>px;*/" />
+                                </a>
+                            </div>
+                        </div>
+                    </lr:GridPhotoCell>
+                </lr:ThumbnailGrid>
+            </div>
+
+            <!-- <button type="button" class="button scroll-to-top">Scroll to top &#x25B2;</button> -->
+        </div>
+
+        <footer>
+            <div class="container">
+                <% if model.metadata.copyright ~= "" then %>
+                <div class="copyright">&copy; $model.metadata.copyright - All rights reserved</div>
+                <% end %>
+                <% if model.metadata.name ~= "" then %>
+                <div class="contact">
+                    <a href="<% if model.metadata.link ~= "" then %>$model.metadata.link<% elseif model.metadata.email ~= "" then %>mailto:$model.metadata.email<% end %>">$model.metadata.name</a>
+                </div>
+                <% end %>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/vegas.min.js"></script>
+    <script type="text/javascript" src="js/hammer.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <% if model.addons.tracking ~= "" then %>
+    $model.addons.tracking
+    <% end %>
+</body>
+</html>
