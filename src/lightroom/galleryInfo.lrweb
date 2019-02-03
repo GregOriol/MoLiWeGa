@@ -153,9 +153,7 @@ return {
 							ui.popup_row {
 								title = "Style",
 								items = {
-									{ title = "Table", value = "table" },
-									{ title = "Columns", value = "columns" },
-									{ title = "Masonry", value = "masonry" }
+									{ title = "Table", value = "table" }
 								},
 								bindingValue = "style.type",
 							},
