@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "hammerjs": "^2.0.8",
-    "jquery": "^2.2",
+    "jquery": "^3.3",
     "normalize.css": "^8.0.0",
     "vegas": "^2.4.3"
   },
