@@ -9,7 +9,7 @@ return {
 	LrSdkVersion = 2.0,
 	LrSdkMinimumVersion = 2.0,
 
-	version = 1.0,
+	version = 1.1,
 	title = "Modern Ligthroom Web Gallery",
 	id = "net.gregoriol.lightroom.moliwega",
 	galleryType = "lua",
