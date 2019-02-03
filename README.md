@@ -13,6 +13,7 @@ It brings HTML5 responsive galleries to Lightroom.
 
 # Demo
 * Demo 1: https://www.gregoriol.net/moliwega/demo1/
+* Demo 2: https://www.gregoriol.net/moliwega/demo2/
 
 # How to use it
 ## Installation
@@ -66,4 +67,4 @@ Note the onSlideshowWalk function: it will be called when a slideshow image is d
 * https://github.com/kreuzerkrieg/LUAJunk/blob/41724b2c101dfc45a50ea39ee93d7359197aad19/LightRoom/KreuzerkriegHTML.lrwebengine/galleryInfo.lrweb
 
 # Work in progress
-* only the "table" layout is currently implemented; other layouts like "columns" and "masonry" will be implemented later
+* only the table layout is currently implemented; other layouts like columns and masonry may be implemented later
