@@ -17,7 +17,13 @@ Double-click on dist/MoLiWeGa.lrwebengine if your system allows it, or copy it t
 Re-open Lightroom and it will appear in the gallery models' list.
 
 ## Settings
-A lot of settings are available for the 
+A lot of settings are available in the Lightroom gallery settings pane:
+
+* title and description
+* footer's copyright, link
+* background and text colors
+* style: gutter, images, margins, numbers
+* image size and quality
 
 ## Tracking
 If you want to use a tracking system, add the Javascript code into the Add-ons > Tracking field, it will be added to the page.
