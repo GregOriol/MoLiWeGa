@@ -39,6 +39,8 @@ return {
 		["appearance.text.cssID"] = "body",
 		["appearance.title.color"] = "#ffffff",
 		["appearance.title.cssID"] = "#header-text",
+		["appearance.item.background-color"] = "#333333",
+		["appearance.item.cssID"] = ".item",
 
 		["lightroomApplication.jpegQuality"] = 80,
 		["lightroomApplication.useWatermark"] = false,
@@ -136,6 +138,10 @@ return {
 							f:label_and_color_row {
 								color = bind "appearance.text.color",
 								title = "Text font color",
+							},
+							f:label_and_color_row {
+								color = bind "appearance.item.background-color",
+								title = "Item background color",
 							},
 						},
 					},
