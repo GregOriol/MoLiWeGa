@@ -13,7 +13,7 @@ It brings HTML5 responsive galleries to Lightroom.
 
 # How to use it
 ## Installation
-Double-click on dist/MoLiWeGa.lrwebengine if your system allows it, or copy it to your Lightroom's Web Galleries folder (on macOS: ~/Library/Application Support/Adobe/Lightroom/Web Galleries).
+Double-click on dist/MoLiWeGa.lrwebengine if your system allows it, or copy it to your Lightroom's Web Galleries folder (on macOS: `~/Library/Application Support/Adobe/Lightroom/Web Galleries`).
 Re-open Lightroom and it will appear in the gallery models' list.
 
 ## Settings
