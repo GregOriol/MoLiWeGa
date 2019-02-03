@@ -11,6 +11,9 @@ It brings HTML5 responsive galleries to Lightroom.
 * Slideshow
 * Responsive from mobile to large desktops
 
+# Demo
+* Demo 1: https://www.gregoriol.net/moliwega/demo1/
+
 # How to use it
 ## Installation
 Double-click on dist/MoLiWeGa.lrwebengine if your system allows it, or copy it to your Lightroom's Web Galleries folder (on macOS: `~/Library/Application Support/Adobe/Lightroom/Web Galleries`).
@@ -61,3 +64,6 @@ Note the onSlideshowWalk function: it will be called when a slideshow image is d
 * http://www.andrewbriggsphotography.co.uk/simplicity/
 * https://github.com/brggs/Simplicity-for-Lightroom/blob/master/simplicity-gallery-v1.lrwebengine/
 * https://github.com/kreuzerkrieg/LUAJunk/blob/41724b2c101dfc45a50ea39ee93d7359197aad19/LightRoom/KreuzerkriegHTML.lrwebengine/galleryInfo.lrweb
+
+# Work in progress
+* only the "table" layout is currently implemented; other layouts like "columns" and "masonry" will be implemented later
