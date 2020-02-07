@@ -2,7 +2,7 @@
   "name": "moliwega",
   "title": "MoLiWeGa",
   "description": "",
-  "version": "0.1.0",
+  "version": "1.2",
   "homepage": "https://www.gregoriol.net",
   "engines": {
     "node": ">=8.0"
