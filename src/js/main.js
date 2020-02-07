@@ -74,6 +74,9 @@ $(function () {
     $vegasContainer.append('<span id="vegas-prev" class="vegas-control icon-left-open-big"></span>');
     $vegasContainer.append('<span id="vegas-next" class="vegas-control icon-right-open-big"></span>');
     $vegasContainer.append('<span id="vegas-playpause" class="vegas-control icon-play"></span>');
+    if ($body.hasClass('download')) {
+        $vegasContainer.append('<span id="vegas-download" class="vegas-control icon-download"></span>');
+    }
     if (fullscreenAvailable($vegasContainer.get(0))) {
         $vegasContainer.append('<span id="vegas-fullscreen" class="vegas-control icon-resize-full"></span>');
     }
@@ -130,6 +133,19 @@ $(function () {
             $this.removeClass('icon-resize-small');
             $this.addClass('icon-resize-full');
         }
+    });
+
+    $vegasContainer.find('#vegas-download').on('click', function(e) {
+        e.preventDefault();
+
+        var current = $vegasContainer.vegas('current');
+        var slide = slides[current];
+
+        var link = document.createElement('a');
+        link.download = slide.src.substring(slide.src.lastIndexOf('/') + 1);
+        link.href = slide.src;
+        link.target = "_blank";
+        link.click();
     });
 
     var vegasKeyup = function(e) {

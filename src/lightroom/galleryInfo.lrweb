@@ -32,6 +32,7 @@ return {
 		["style.images.aspect"] = "aspect-cover",
 		["style.images.margin"] = "margin-none",
 		["style.numbers"] = "numbers-with",
+		["style.download"] = "download",
 
 		["appearance.body.background-color"] = "#111111",
 		["appearance.body.cssID"] = "body",
@@ -196,6 +197,14 @@ return {
 									{ title = "Without", value = "numbers-without" },
 								},
 								bindingValue = "style.numbers",
+							},
+							ui.popup_row {
+								title = "Download",
+								items = {
+									{ title = "Enabled", value = "download" },
+									{ title = "Disabled", value = "" },
+								},
+								bindingValue = "style.download",
 							},
 						}
 					},

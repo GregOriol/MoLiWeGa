@@ -86,7 +86,7 @@ gulp.task('vendors', [], function() {
 		.pipe(gulp.dest(distPath+'./resources/css'));
 	out.add(res);
 
-	res = gulp.src('./src/fonts/*')
+	res = gulp.src('./src/fonts/*.{eot,svg,ttf,woff,woff2}')
 		.pipe(gulp.dest(distPath+'./resources/fonts'));
 	out.add(res);
 
