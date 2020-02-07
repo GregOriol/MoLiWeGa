@@ -1,7 +1,7 @@
 --[[
 
 MoLiWeGa
-Copyright 2019 Greg Oriol - gregoriol.net
+Copyright 2020 Greg Oriol - gregoriol.net
 
 ]]
 
@@ -23,7 +23,7 @@ return {
 		["metadata.name"] = "John Doe",
 		["metadata.link"] = "https://website.com",
 
-		["metadata.copyright"] = "2019 John Doe",
+		["metadata.copyright"] = "2020 John Doe",
 
 		["addons.tracking"] = "",
 
