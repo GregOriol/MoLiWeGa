@@ -22,12 +22,12 @@ const merge			= require('merge-stream');
 //
 //////////////////////////////////////////
 
-const distPath = './dist/MoLiWeGa.lrwebengine/'
+const distPath = './dist/MoLiWeGa.lrwebengine/';
 
-var sassFiles = new Set();
+const sassFiles = new Set();
 sassFiles.add('main');
 
-var jsFiles = new Set();
+const jsFiles = new Set();
 jsFiles.add('main');
 
 //////////////////////////////////////////
