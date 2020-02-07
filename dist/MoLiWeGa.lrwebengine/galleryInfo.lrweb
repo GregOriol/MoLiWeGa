@@ -1,7 +1,7 @@
 --[[
 
 MoLiWeGa
-Copyright 2019 Greg Oriol - gregoriol.net
+Copyright 2020 Greg Oriol - gregoriol.net
 
 ]]
 
@@ -9,7 +9,7 @@ return {
 	LrSdkVersion = 2.0,
 	LrSdkMinimumVersion = 2.0,
 
-	version = 1.1,
+	version = 1.2,
 	title = "Modern Ligthroom Web Gallery",
 	id = "net.gregoriol.lightroom.moliwega",
 	galleryType = "lua",
@@ -23,7 +23,7 @@ return {
 		["metadata.name"] = "John Doe",
 		["metadata.link"] = "https://website.com",
 
-		["metadata.copyright"] = "2019 John Doe",
+		["metadata.copyright"] = "2020 John Doe",
 
 		["addons.tracking"] = "",
 
@@ -32,6 +32,7 @@ return {
 		["style.images.aspect"] = "aspect-cover",
 		["style.images.margin"] = "margin-none",
 		["style.numbers"] = "numbers-with",
+		["style.download"] = "download",
 
 		["appearance.body.background-color"] = "#111111",
 		["appearance.body.cssID"] = "body",
@@ -196,6 +197,14 @@ return {
 									{ title = "Without", value = "numbers-without" },
 								},
 								bindingValue = "style.numbers",
+							},
+							ui.popup_row {
+								title = "Download",
+								items = {
+									{ title = "Enabled", value = "download" },
+									{ title = "Disabled", value = "" },
+								},
+								bindingValue = "style.download",
 							},
 						}
 					},
